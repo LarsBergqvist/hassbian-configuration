@@ -1,0 +1,120 @@
+homeassistant:
+  name: Our Hassbian
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 38
+  unit_system: metric
+  time_zone: Europe/Stockholm
+  customize: !include customization.yaml
+  whitelist_external_dirs:
+    - /tmp
+
+config:
+
+map:
+
+system_health:
+
+frontend:
+
+http:
+#  api_password: !secret ha_pwd
+#  ssl_certificate: !secret ssl_certificate
+#  ssl_key: !secret ssl_key
+#  base_url: !secret base_url
+#  ip_ban_enabled: true
+#  login_attempts_threshold: 2
+
+# purge db after 3 days. problems with sqlite
+recorder:
+  purge_interval: 1
+  purge_keep_days: 3
+
+# Squeezebox
+media_player: !include media_players.yaml
+
+light:
+  - platform: hue
+    host: 192.168.1.232
+
+# Checks for available updates
+updater:
+
+logger:
+  default: error
+  logs:
+    homeassistant.components.media_player: critical
+    urllib3.connectionpool: error
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Moon
+sensor moon:
+  - platform: moon
+
+# Weather Prediction
+sensor yr:
+  - platform: yr
+    name: yr
+    monitored_conditions:
+        - temperature
+        - symbol
+        - precipitation
+        - windSpeed
+        - pressure
+        - windDirection
+        - humidity
+        - fog
+        - cloudiness
+        - lowClouds
+        - mediumClouds
+        - highClouds
+        - dewpointTemperature
+        
+sensor: !include sensors.yaml
+
+mqtt:
+  broker: 192.168.1.17
+  port: 1883
+  client_id: home-assistant-1
+  keepalive: 60
+
+switch: !include switches.yaml
+
+camera: !include cameras.yaml
+
+group: !include groups.yaml
+
+#automation: !include automations.yaml
+
+discovery:
+
+ios:
+
+verisure:
+    username: !secret vrname
+    password: !secret vrpwd
+
+input_boolean:
+  do_notify_on_porch_motion:
+    name: Send notifications on porch motions
+    initial: on
+
+speedtestdotnet:
+  scan_interval:
+    hours: 1
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
