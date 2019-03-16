@@ -106,6 +106,18 @@
   state_topic: "Home/RPI32/MemoryUsagePercent"
   name: rpi32_memory_usage
   unit_of_measurement: "%"
+- platform: mqtt
+  state_topic: "Home/hassbian/Temp"
+  name: hassbian_temperature
+  unit_of_measurement: "°C"
+- platform: mqtt
+  state_topic: "Home/hassbian/CpuUsagePercent"
+  name: hassbian_cpu_usage
+  unit_of_measurement: "%"
+- platform: mqtt
+  state_topic: "Home/hassbian/MemoryUsagePercent"
+  name: hassbian_memory_usage
+  unit_of_measurement: "%"
 
 # event sensors
 - platform: mqtt

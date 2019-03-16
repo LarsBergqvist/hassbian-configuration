@@ -18,12 +18,12 @@ system_health:
 frontend:
 
 http:
-#  api_password: !secret ha_pwd
-#  ssl_certificate: !secret ssl_certificate
-#  ssl_key: !secret ssl_key
-#  base_url: !secret base_url
-#  ip_ban_enabled: true
-#  login_attempts_threshold: 2
+   api_password: !secret ha_pwd
+   ssl_certificate: !secret ssl_certificate
+   ssl_key: !secret ssl_key
+   base_url: !secret base_url
+   ip_ban_enabled: true
+   login_attempts_threshold: 2
 
 # purge db after 3 days. problems with sqlite
 recorder:
@@ -95,7 +95,7 @@ camera: !include cameras.yaml
 
 group: !include groups.yaml
 
-#automation: !include automations.yaml
+automation: !include automations.yaml
 
 discovery:
 

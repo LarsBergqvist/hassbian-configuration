@@ -50,6 +50,7 @@ computers_stat:
         - group.raspberrypi3_group
         - group.raspberrypi2_group
         - group.raspberrypi32_group
+        - group.hassbian_group
         - sensor.ssl_cert_expiry
         - sensor.speedtest_download
         - sensor.speedtest_upload
@@ -214,6 +215,13 @@ raspberrypi32_group:
         - sensor.rpi32_temperature
         - sensor.rpi32_cpu_usage
         - sensor.rpi32_memory_usage
+
+hassbian_group:
+    name: Raspberry HassbianPi
+    entities:
+        - sensor.hassbian_temperature
+        - sensor.hassbian_cpu_usage
+        - sensor.hassbian_memory_usage
 
 tracker_group:
     name: Tracker group
