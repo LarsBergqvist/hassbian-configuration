@@ -89,6 +89,8 @@ mqtt:
   client_id: home-assistant-1
   keepalive: 60
 
+device_tracker: !include device_trackers.yaml
+
 switch: !include switches.yaml
 
 camera: !include cameras.yaml
