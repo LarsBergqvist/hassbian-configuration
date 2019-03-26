@@ -108,6 +108,7 @@ detectors:
     entities:
         - sensor.door_last_opened
         - sensor.porch_last_motion
+        - sensor.back_porch_last_motion
         - alarm_control_panel.husbyvagen_alarm
         - sensor.entredorr_state
         - sensor.altandorr_state

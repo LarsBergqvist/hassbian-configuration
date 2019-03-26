@@ -126,6 +126,9 @@
 - platform: mqtt
   state_topic: "Home/Porch/Motion"
   name: porch_motion
+- platform: mqtt
+  state_topic: "Home/BackPorch/Motion"
+  name: back_porch_motion
 
 # other
 - platform: time_date
@@ -151,6 +154,10 @@
       friendly_name: 'Porch last motion'
       icon_template: mdi:walk
       value_template: '{{ as_timestamp(states.sensor.porch_motion.last_changed) | timestamp_custom("%a %H:%M", True) }}'
+    back_porch_last_motion:
+      friendly_name: 'B.porch last motion'
+      icon_template: mdi:walk
+      value_template: '{{ as_timestamp(states.sensor.back_porch_motion.last_changed) | timestamp_custom("%a %H:%M", True) }}'
     day_night:
       friendly_name: 'Day/Night'
       value_template: '{% if is_state("sun.sun", "above_horizon") %}Day{% else %}Night{% endif %}'
