@@ -18,7 +18,7 @@ system_health:
 frontend:
 
 http:
-   api_password: !secret ha_pwd
+#   api_password: !secret ha_pwd
    ssl_certificate: !secret ssl_certificate
    ssl_key: !secret ssl_key
    base_url: !secret base_url
@@ -110,6 +110,9 @@ verisure:
 input_boolean:
   do_notify_on_porch_motion:
     name: Send notifications on porch motions
+    initial: on
+  do_notify_on_back_porch_motion:
+    name: Send notifications on back porch motions
     initial: on
 
 speedtestdotnet:

@@ -171,4 +171,26 @@
   - data:
       entity_id: input_boolean.do_notify_on_porch_motion
     service: input_boolean.turn_on
-
+- id: '1553624963116'
+  alias: Notify Lars on back porch motion
+  trigger:
+  - entity_id: sensor.back_porch_last_motion
+    platform: state
+  condition:
+  - condition: state
+    entity_id: input_boolean.do_notify_on_back_porch_motion
+    state: 'on'
+  - condition: state
+    entity_id: device_tracker.larsiphone
+    state: not_home
+  action:
+  - data:
+      message: Back porch motion detected!
+    service: notify.ios_larsiphone
+  - data:
+      entity_id: input_boolean.do_notify_on_back_porch_motion
+    service: input_boolean.turn_off
+  - delay: 0:05
+  - data:
+      entity_id: input_boolean.do_notify_on_back_porch_motion
+    service: input_boolean.turn_on
