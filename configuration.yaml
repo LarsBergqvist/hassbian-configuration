@@ -18,7 +18,6 @@ system_health:
 frontend:
 
 http:
-#   api_password: !secret ha_pwd
    ssl_certificate: !secret ssl_certificate
    ssl_key: !secret ssl_key
    base_url: !secret base_url
@@ -84,10 +83,19 @@ sensor yr:
 sensor: !include sensors.yaml
 
 mqtt:
-  broker: 192.168.1.17
+  broker: 192.168.1.16
   port: 1883
-  client_id: home-assistant-1
+  client_id: hassbian
   keepalive: 60
+
+weblink:
+  entities:
+    - name: Charts
+      icon: 'mdi:chart-line'
+      url: !secret charts_url
+    - name: Grafana
+      icon: 'mdi:chart-areaspline'
+      url: !secret grafana_url
 
 device_tracker: !include device_trackers.yaml
 

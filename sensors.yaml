@@ -138,6 +138,10 @@
 # template sensors
 - platform: template
   sensors:
+    alarm_state:
+      friendly_name: 'Alarm'
+      value_template: '{% if is_state("alarm_control_panel.husbyvagen_alarm", "armed_away") %}On{% elif is_state("alarm_control_panel.husbyvagen_alarm", "armed_home") %}On/Home{% else %}Off{% endif %}'
+      icon_template: '{% if is_state("alarm_control_panel.husbyvagen_alarm", "armed") %}mdi:lock{% elif is_state("alarm_control_panel.husbyvagen_alarm", "armed_home") %}mdi:lock-outline{% else %}mdi:lock-open{% endif %}'
     altandorr_state:
       friendly_name: 'Back door state'
       value_template: '{% if is_state("binary_sensor.altandorr", "on") %}Open{% else %}Closed{% endif %}'

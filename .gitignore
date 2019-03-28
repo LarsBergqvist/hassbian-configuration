@@ -1,3 +1,5 @@
+._*
+.DS_Store
 .storage/
 .config_entries.json
 .HA_VERSION

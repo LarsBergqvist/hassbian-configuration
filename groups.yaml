@@ -14,17 +14,11 @@ default_view:
         - group.laundry_room
         - group.aquarium
 
-forecast:
+security:
     view: yes
-    icon: mdi:weather-partlycloudy
+    icon: mdi:security
     entities:
-        - weather.smhi_home
-links:
-    view: yes
-    icon: mdi:web
-    entities:
-        - weblink.grafana
-        - weblink.charts
+        - alarm_control_panel.husbyvagen_alarm
 
 media:
     view: yes
@@ -42,6 +36,19 @@ cams:
         - camera.outdoor2
         - camera.rpi
         - camera.aqua_cam
+
+forecast:
+    view: yes
+    icon: mdi:weather-partlycloudy
+    entities:
+        - weather.smhi_home
+links:
+    view: yes
+    icon: mdi:web
+    entities:
+        - weblink.grafana
+        - weblink.charts
+
 
 computers_stat:
     view: yes
@@ -109,7 +116,7 @@ detectors:
         - sensor.door_last_opened
         - sensor.porch_last_motion
         - sensor.back_porch_last_motion
-        - alarm_control_panel.husbyvagen_alarm
+        - sensor.alarm_state
         - sensor.entredorr_state
         - sensor.altandorr_state
 
