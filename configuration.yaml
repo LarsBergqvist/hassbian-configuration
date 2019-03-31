@@ -16,6 +16,7 @@ map:
 system_health:
 
 frontend:
+  themes: !include themes.yaml
 
 http:
    ssl_certificate: !secret ssl_certificate
