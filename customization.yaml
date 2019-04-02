@@ -2,13 +2,13 @@
 # Switch customizations
 #
 switch.window_lights_downstairs:
-  friendly_name: Window lights
+  friendly_name: Windows downstairs
   icon: mdi:lightbulb
 switch.wall_lights_downstairs:
   friendly_name: Wall lights
   icon: mdi:lightbulb
 switch.window_lights_upstairs:
-  friendly_name: Window lights
+  friendly_name: Windows upstairs
   icon: mdi:lightbulb
 switch.floor_light_upstairs:
   friendly_name: Floor light
