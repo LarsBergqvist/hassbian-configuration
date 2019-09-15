@@ -30,6 +30,8 @@ media:
         - media_player.kitchen
         - media_player.vardagsrum
         - media_player.sovrum
+        - media_player.emils
+        - media_player.maltes
 
 cams:
     view: yes
@@ -37,12 +39,10 @@ cams:
     entities:
         - camera.outdoor1
         - camera.outdoor2
-        - camera.rpi
-        - camera.aqua_cam
 
 forecast:
     view: yes
-    icon: mdi:weather-partlycloudy
+    icon: mdi:weather-cloudy
     entities:
         - weather.smhi_home
 links:
@@ -111,7 +111,6 @@ aquarium:
     name: Aquarium
     entities:
         - switch.aquarium_light
-        - camera.aqua_cam
 
 detectors:
     name: Detectors
