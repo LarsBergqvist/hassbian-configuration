@@ -123,7 +123,7 @@
       data:
         push:
           sound: US-EN-Alexa-Front-Door-Opened.wav
-- id: auto9
+- id: '2522102616925'
   alias: Turn off aquarium light at night
   trigger:
   - at: '21:00:00'

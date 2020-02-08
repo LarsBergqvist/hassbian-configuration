@@ -11,6 +11,8 @@ homeassistant:
 
 config:
 
+mobile_app:
+
 map:
 
 system_health:
@@ -22,8 +24,8 @@ http:
    ssl_certificate: !secret ssl_certificate
    ssl_key: !secret ssl_key
    base_url: !secret base_url
-#   ip_ban_enabled: true
-#   login_attempts_threshold: 2
+   ip_ban_enabled: true
+   login_attempts_threshold: 4
 
 # purge db after 3 days. problems with sqlite
 recorder:
@@ -110,7 +112,7 @@ automation: !include automations.yaml
 
 discovery:
 
-ios:
+#ios:
 
 verisure:
     username: !secret vrname
